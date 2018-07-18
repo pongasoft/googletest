@@ -146,6 +146,7 @@ endmacro()
 function(cxx_library_with_type name type cxx_flags)
   # type can be either STATIC or SHARED to denote a static or shared library.
   # ARGN refers to additional arguments after 'cxx_flags'.
+  cmake_policy(SET CMP0063 NEW)
   add_library(${name} ${type} ${ARGN})
   set_target_properties(${name}
     PROPERTIES
